@@ -53,15 +53,27 @@ public class Lox {
     private static void run(String source) {
         Scanner scanner = new Scanner(source);
         List<Token> tokens = scanner.scanTokens();
+        Parser parser = new Parser(tokens);
+        Expr expression = parser.parse();
 
-        for (Token token : tokens) {
-            System.out.println(token);
-        }
+        if (hadError) return;
+
+        System.out.println(new AstPrinter().print(expression));
     }
 
     //calls the report function with a line number and error message.
     static void error(int line, String message) {
-        report(line, "", message);
+        report(line, " at end", message);
+    }
+
+    //calls the report function with a token and error message.
+    static void error(Token token, String message) {
+        if (token.type == TokenType.EOF) {
+            report(token.line, " at end", message);
+        }
+        else {
+            report(token.line, " at '" + token.lexeme + "'", message);
+        }
     }
 
     //prints an error message and line to the console. marks hadError as true to stop execution from happening.
