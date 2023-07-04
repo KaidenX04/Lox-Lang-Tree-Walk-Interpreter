@@ -56,6 +56,7 @@ public class Parser {
     //depending on the type of statement.
     private Stmt statement() {
         if (match(PRINT)) return printStatement();
+        if (match(LEFT_BRACE)) return new Stmt.Block(block());
 
         return expressionStatement();
     }
@@ -72,6 +73,18 @@ public class Parser {
         Expr expr = expression();
         consume(SEMICOLON, "Expect ';' after value.");
         return new Stmt.Expression(expr);
+    }
+
+    //creates a block of code by creating a list of statements while looking for a closing brace.
+    private List<Stmt> block() {
+        List<Stmt> statements = new ArrayList<>();
+
+        while (!check(RIGHT_BRACE) && !isAtEnd()) {
+           statements.add(declaration());
+        }
+
+        consume(RIGHT_BRACE, "Expect '}' after block.");
+        return statements;
     }
 
     private Expr assignment() {

@@ -24,8 +24,6 @@ abstract class Expr {
         final Token name;
         final Expr value;
     }
-
-    //binary expression. consists of left expression, right expression, and an operator.
     static class Binary extends Expr {
         Binary(Expr left, Token operator, Expr right) {
             this.left = left;
@@ -42,8 +40,6 @@ abstract class Expr {
         final Token operator;
         final Expr right;
     }
-
-    //grouping expression. consists of an expression.
     static class Grouping extends Expr {
         Grouping(Expr expression) {
             this.expression = expression;
@@ -56,8 +52,6 @@ abstract class Expr {
 
         final Expr expression;
     }
-
-    //literal expression. consists of a value.
     static class Literal extends Expr {
         Literal(Object value) {
             this.value = value;
@@ -70,8 +64,6 @@ abstract class Expr {
 
         final Object value;
     }
-
-    //unary expression. consists of an operator and a right expression.
     static class Unary extends Expr {
         Unary(Token operator, Expr right) {
             this.operator = operator;
