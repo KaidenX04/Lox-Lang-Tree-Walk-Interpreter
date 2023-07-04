@@ -118,7 +118,7 @@ class Scanner {
 
     //keeps checking the next character to build an identifier literal, or to detect and add keywords to token list.
     private void identifier() {
-        while (isAlphaNumberic(peek())) advance();
+        while (isAlphaNumeric(peek())) advance();
 
         String text = source.substring(start, current);
         TokenType type = keywords.get(text);
@@ -199,7 +199,7 @@ class Scanner {
     }
 
     //checks if a character is a digit, in the alphabet, or an underscore.
-    private boolean isAlphaNumberic(char c) {
+    private boolean isAlphaNumeric(char c) {
         return isAlpha(c) || isDigit(c);
     }
 
