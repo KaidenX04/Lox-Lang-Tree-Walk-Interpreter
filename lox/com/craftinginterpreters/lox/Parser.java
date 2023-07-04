@@ -64,6 +64,7 @@ public class Parser {
         return expressionStatement();
     }
 
+    //creates a for statement by building a while statement.
     private Stmt forStatement() {
         consume(LEFT_PAREN, "Expect '(' after 'for'.");
 

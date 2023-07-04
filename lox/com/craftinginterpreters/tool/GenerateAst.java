@@ -1,3 +1,5 @@
+//used to generate all the expr and stmt classes so that I don't have to write dozens of classes.
+
 package com.craftinginterpreters.tool;
 
 import java.io.IOException;
