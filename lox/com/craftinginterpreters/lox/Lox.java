@@ -10,7 +10,11 @@ import java.util.List;
 
 //main file.
 public class Lox {
+    private static final Interpreter interpreter = new Interpreter();
+
     static boolean hadError = false;
+
+    static boolean hadRuntimeError = false;
 
     //checks for arguments (filepath) and decides to read the file if there is one,
     //or start reading the console input if there is not.
@@ -32,6 +36,7 @@ public class Lox {
         byte[] bytes = Files.readAllBytes(Paths.get(path));
         run (new String(bytes, Charset.defaultCharset()));
         if (hadError) System.exit(65);
+        if (hadRuntimeError) System.exit(70);
     }
 
     //starts reading console input and executes each entered command
@@ -49,16 +54,18 @@ public class Lox {
         }
     }
 
-    //passes the source code as a string to the scanner. receives a list of tokens from the scanner.
+    //passes the source code as a string to the scanner, receives a list of tokens from the scanner,
+    //passes tokens to parser, receives an abstract syntax tree, passes AST to interpreter,
+    //interpreter executes the code.
     private static void run(String source) {
         Scanner scanner = new Scanner(source);
         List<Token> tokens = scanner.scanTokens();
         Parser parser = new Parser(tokens);
-        Expr expression = parser.parse();
+        List<Stmt> statements = parser.parse();
 
         if (hadError) return;
 
-        System.out.println(new AstPrinter().print(expression));
+        interpreter.interpret(statements);
     }
 
     //calls the report function with a line number and error message.
@@ -74,6 +81,12 @@ public class Lox {
         else {
             report(token.line, " at '" + token.lexeme + "'", message);
         }
+    }
+
+    //reports an error with line number and error message.
+    static void runtimeError(RuntimeError error) {
+        System.err.println(error.getMessage() + "\n[line " + error.token.line + "]");
+        hadRuntimeError = true;
     }
 
     //prints an error message and line to the console. marks hadError as true to stop execution from happening.
