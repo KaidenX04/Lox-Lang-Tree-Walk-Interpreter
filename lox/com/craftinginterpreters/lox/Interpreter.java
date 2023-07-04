@@ -102,6 +102,17 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
         return null;
     }
 
+    @Override
+    public Void visitIfStmt(Stmt.If stmt) {
+        if (isTruthy(evaluate(stmt.condition))) {
+            execute(stmt.thenBranch);
+        }
+        else if (stmt.elseBranch != null) {
+            execute(stmt.elseBranch);
+        }
+        return null;
+    }
+
     //begins process of recursively evaluating the expression, then, prints the result.
     @Override
     public Void visitPrintStmt(Stmt.Print stmt) {
@@ -121,6 +132,15 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
         return null;
     }
 
+    //continues executing the body of the statement as long as the while condition is true.
+    @Override
+    public Void visitWhileStmt(Stmt.While stmt) {
+        while (isTruthy(evaluate(stmt.condition))) {
+            execute(stmt.body);
+        }
+        return null;
+    }
+
     //assigns a value to an already existing variable in the global environment hashmap.
     @Override
     public Object visitAssignExpr(Expr.Assign expr) {
@@ -130,9 +150,25 @@ class Interpreter implements Expr.Visitor<Object>, Stmt.Visitor<Void> {
     }
 
     //begins the process of executing a block of code, creates a new environment for local variables.
-    @Override Void visitBlockStmt(Stmt.Block stmt) {
+    @Override
+    public Void visitBlockStmt(Stmt.Block stmt) {
         executeBlock(stmt.statements, new Environment(environment));
         return null;
+    }
+
+    //evaluates a logical expression to true or false.
+    @Override
+    public Object visitLogicalExpr(Expr.Logical expr) {
+        Object left = evaluate(expr.left);
+
+        if (expr.operator.type == TokenType.OR) {
+            if (isTruthy(left)) return left;
+        }
+        else {
+            if (!isTruthy(left)) return left;
+        }
+
+        return evaluate(expr.right);
     }
 
     //checks if an operand is a number.
