@@ -1,0 +1,15 @@
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\bin\Debug\net6.0\Quasar.exe
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\bin\Debug\net6.0\Quasar.deps.json
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\bin\Debug\net6.0\Quasar.runtimeconfig.json
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\bin\Debug\net6.0\Quasar.dll
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\bin\Debug\net6.0\Quasar.pdb
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.csproj.AssemblyReference.cache
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.AssemblyInfoInputs.cache
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.AssemblyInfo.cs
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.csproj.CoreCompileInputs.cache
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.dll
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\refint\Quasar.dll
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.pdb
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\Quasar.genruntimeconfig.cache
+C:\Users\Kaiden.Flaig\Desktop\Lox-Lang-Tree-Walk-Interpreter\Quasar\Quasar\obj\Debug\net6.0\ref\Quasar.dll

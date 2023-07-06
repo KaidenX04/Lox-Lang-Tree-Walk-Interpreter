@@ -1,18 +1,35 @@
 ﻿namespace Quasar;
 
-public class Quasar { 
-    public static void Main(String[] args) 
+public static class Quasar {
+    public static bool error = false;
+
+    public static void Main(string[] args) 
     {
-        String input;
+        string input;
         List<Token> tokens;
+        List<Statement> statements;
         Lexer lexer = new();
 
         do
         {
-            Console.WriteLine("> ");
+            error = false;
+            Console.Write("> ");
             input = Console.ReadLine();
             tokens = lexer.Lex(input);
-            
-        } while (input != null);
+            statements = Parser.Parse(tokens);
+            if (error == false)
+            {
+                foreach (Statement statement in statements)
+                {
+                    statement.execute();
+                }
+            }
+        } while (input != "");
+    }
+
+    public static void ThrowException(string message) 
+    { 
+        error = true;
+        Console.WriteLine(message);
     }
 }

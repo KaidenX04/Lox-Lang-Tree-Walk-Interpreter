@@ -8,23 +8,23 @@
     "net6.0": []
   },
   "packageFolders": {
-    "C:\\Users\\kaide\\.nuget\\packages\\": {},
-    "D:\\Visual Studio Shared\\NuGetPackages": {}
+    "C:\\Users\\Kaiden.Flaig\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kaide\\Desktop\\Quasar\\Quasar\\Quasar.csproj",
+      "projectUniqueName": "C:\\Users\\Kaiden.Flaig\\Desktop\\Lox-Lang-Tree-Walk-Interpreter\\Quasar\\Quasar\\Quasar.csproj",
       "projectName": "Quasar",
-      "projectPath": "C:\\Users\\kaide\\Desktop\\Quasar\\Quasar\\Quasar.csproj",
-      "packagesPath": "C:\\Users\\kaide\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kaide\\Desktop\\Quasar\\Quasar\\obj\\",
+      "projectPath": "C:\\Users\\Kaiden.Flaig\\Desktop\\Lox-Lang-Tree-Walk-Interpreter\\Quasar\\Quasar\\Quasar.csproj",
+      "packagesPath": "C:\\Users\\Kaiden.Flaig\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kaiden.Flaig\\Desktop\\Lox-Lang-Tree-Walk-Interpreter\\Quasar\\Quasar\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "D:\\Visual Studio Shared\\NuGetPackages"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\kaide\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kaiden.Flaig\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -33,7 +33,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -67,7 +66,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
       }
     }
   }
