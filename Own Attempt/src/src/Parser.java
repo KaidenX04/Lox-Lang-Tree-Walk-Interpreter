@@ -15,9 +15,7 @@ public class Parser {
 
     public Expr arithmetic() {
         Expr expr = factor();
-        if (currentToken < tokens.size() && tokens.get(currentToken).type == TokenType.ADD || tokens.get(currentToken).type == TokenType.SUB) {
-            System.out.println(tokens.get(currentToken).value);
-            System.out.println(tokens.get(currentToken).type);
+        if (currentToken < tokens.size() && (tokens.get(currentToken).type == TokenType.ADD || tokens.get(currentToken).type == TokenType.SUB)) {
             expr = new Expr.Binary(expr, tokens.get(currentToken++), factor());
         }
         return expr;
@@ -25,15 +23,14 @@ public class Parser {
 
     public Expr factor() {
         Expr expr = unary();
-        if (currentToken < tokens.size() && tokens.get(currentToken).type == TokenType.MUL || tokens.get(currentToken).type == TokenType.DIV || tokens.get(currentToken).type == TokenType.POW) {
+        if (currentToken < tokens.size() && (tokens.get(currentToken).type == TokenType.MUL || tokens.get(currentToken).type == TokenType.DIV || tokens.get(currentToken).type == TokenType.POW)) {
             expr = new Expr.Binary(expr, tokens.get(currentToken++), unary());
         }
         return expr;
     }
 
     public Expr unary() {
-        if (currentToken < tokens.size() && tokens.get(currentToken).type == TokenType.SUB) {
-            System.out.println(tokens.get(currentToken).value);
+        if (currentToken < tokens.size() && (tokens.get(currentToken).type == TokenType.SUB)) {
             return new Expr.Unary(tokens.get(currentToken++), unary());
         }
 
@@ -41,10 +38,7 @@ public class Parser {
     }
 
     public Expr primary() {
-        if (currentToken < tokens.size() && tokens.get(currentToken).type == TokenType.NUM) {
-            System.out.println(tokens.get(currentToken).value);
-            System.out.println(tokens.get(currentToken).type);
-            System.out.println(currentToken);
+        if (currentToken < tokens.size() && (tokens.get(currentToken).type == TokenType.NUM)) {
             return new Expr.Literal(tokens.get(currentToken++).value);
         }
         throw new RuntimeException("empty expression");

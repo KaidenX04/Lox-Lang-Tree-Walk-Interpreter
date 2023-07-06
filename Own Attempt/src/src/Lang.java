@@ -11,7 +11,8 @@ public class Lang {
             List<Token> tokens = parse(scanner.nextLine());
             Parser parser = new Parser(tokens);
             Expr expr = parser.parse();
-            System.out.println(expr);
+            Interpreter interpreter = new Interpreter();
+            interpreter.interpret(expr);
         }
     }
 
